@@ -102,6 +102,8 @@
     <Compile Include="Assets\Lean\Touch\Scripts\LeanGesture.cs" />
     <Compile Include="Assets\Lean\Touch\Scripts\LeanSnapshot.cs" />
     <Compile Include="Assets\Lean\Touch\Scripts\LeanTouch.cs" />
+    <Compile Include="Assets\Scripts\Attack.cs" />
+    <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\SummoningHall.cs" />
     <Compile Include="Assets\Scripts\Underling.cs" />
     <None Include="Assets\Lean\Common\Examples\Fonts\OFL.txt" />
