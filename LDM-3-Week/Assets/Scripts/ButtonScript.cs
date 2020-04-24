@@ -13,6 +13,5 @@ public class ButtonScript : MonoBehaviour
     public void Attackbutton()
     {
         Debug.Log("TEST");
-        underlingPrefab.GetComponent<Underling>().attack = true;
     }
 }
