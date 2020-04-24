@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cf7e619f961b1034eb3a64030bdaac83
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - youWinLoseBox: {fileID: 6236145388461883143, guid: 09231a107afadeb4d89641273e51c1b2,
+      type: 3}
+  - youWinLoseImage: {instanceID: 0}
+  - winSprite: {instanceID: 0}
+  - loseSprite: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
