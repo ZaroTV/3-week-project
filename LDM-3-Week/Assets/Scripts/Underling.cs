@@ -23,7 +23,15 @@ public class Underling : MonoBehaviour
             WalkToExit(); //this activates the attack 
         }
         step = speed * Time.deltaTime; //this is their movement speed
+        varX = Random.Range(0, 90);
+        varZ = Random.Range(0, 90);
+
     }
+    void Awake()
+    {
+        varY = 8;
+    }
+
     public void UnderlingAttack() //this is here to test the attack function
     {
         attack = true;
