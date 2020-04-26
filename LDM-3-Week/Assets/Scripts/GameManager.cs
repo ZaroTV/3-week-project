@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
     public int underlingCounter;
     public bool showResult;
     public bool win;
-    public bool spawnMagmaEffectWin;
-    public bool spawnMagmaEffectLose;
+    public bool winMagmaEffect;
+    public bool loseMagmaEffect;
     public Vector3 scaleResize;
     void Start()
     {
@@ -45,15 +45,15 @@ public class GameManager : MonoBehaviour
         {
             youWinLoseImage.sprite = loseSprite;
         }
-        if (spawnMagmaEffectWin)
+        if (winMagmaEffect)
         {
             Instantiate(magmaEffectWin, new Vector3(63.9f, 19f, 38.75f), Quaternion.identity);
-            spawnMagmaEffectWin = false;
+            winMagmaEffect = false;
         }
-        if (spawnMagmaEffectLose)
+        if (loseMagmaEffect)
         {
             Instantiate(magmaEffectLose, new Vector3(63.9f, 19f, 38.75f), Quaternion.identity);
-            spawnMagmaEffectLose = false;
+            loseMagmaEffect = false;
         }
         winLoseTimer -= Time.deltaTime;
         if (winLoseTimer >= 1)
