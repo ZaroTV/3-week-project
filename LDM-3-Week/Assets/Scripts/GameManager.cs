@@ -7,90 +7,78 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject youWinLoseBox;
+    public GameObject magmaEffectWin;
+    public GameObject magmaEffectLose;
     public Image youWinLoseImage;
     public Sprite winSprite;
     public Sprite loseSprite;
     public float winLoseTimer;
     public int underlingCounter;
+    public bool showResult;
     public bool win;
-    public bool lose;
+    public bool spawnMagmaEffectWin;
+    public bool spawnMagmaEffectLose;
     public Vector3 scaleResize;
     void Start()
     {
         youWinLoseBox = GameObject.Find("YouWinBox");
         youWinLoseImage = GameObject.Find("YouWinBox").GetComponent<Image>();
         scaleResize = new Vector3(0.01f, 0.01f, 0);
+        winLoseTimer = 5f;
         youWinLoseBox.SetActive(false);
     }
     void Update()
     {
-        Win();
-        Lose();
-    }
-    public void Win()
-    {
-        if (win)
+        if(showResult)
         {
-            youWinLoseBox.SetActive(true);
-            youWinLoseImage.sprite = winSprite;
-            winLoseTimer -= Time.deltaTime;
-            if (winLoseTimer >= 1)
-            {
-                youWinLoseBox.transform.localScale += scaleResize;
-                if (youWinLoseBox.transform.localScale.x >= 1 && youWinLoseBox.transform.localScale.y >= 1)
-                {
-                    youWinLoseBox.transform.localScale = new Vector3(1, 1, 0);
-                }
-            }
-            if (winLoseTimer < 0.5f)
-            {
-                youWinLoseBox.transform.localScale -= scaleResize;
-                if (youWinLoseBox.transform.localScale.x <= 0 && youWinLoseBox.transform.localScale.y <= 0)
-                {
-                    youWinLoseBox.transform.localScale = new Vector3(0.01f, 0.01f, 0);
-                }
-            }
-
-            if (winLoseTimer <= 0)
-            {
-                winLoseTimer = 5;
-                youWinLoseBox.transform.localScale = new Vector3(0.01f, 0.01f, 0f);
-                youWinLoseBox.SetActive(false);
-                win = false;
-            }
+            Result();
         }
     }
-    public void Lose()
+    public void Result()
     {
-        if (lose)
+        youWinLoseBox.SetActive(true);
+        if (win)
         {
-            youWinLoseBox.SetActive(true);
+            youWinLoseImage.sprite = winSprite;
+        }
+        else
+        {
             youWinLoseImage.sprite = loseSprite;
-            winLoseTimer -= Time.deltaTime;
-            if (winLoseTimer >= 1)
+        }
+        if (spawnMagmaEffectWin)
+        {
+            Instantiate(magmaEffectWin, new Vector3(63.9f, 19f, 38.75f), Quaternion.identity);
+            spawnMagmaEffectWin = false;
+        }
+        if (spawnMagmaEffectLose)
+        {
+            Instantiate(magmaEffectLose, new Vector3(63.9f, 19f, 38.75f), Quaternion.identity);
+            spawnMagmaEffectLose = false;
+        }
+        winLoseTimer -= Time.deltaTime;
+        if (winLoseTimer >= 1)
+        {
+            youWinLoseBox.transform.localScale += scaleResize;
+            if (youWinLoseBox.transform.localScale.x >= 1 && youWinLoseBox.transform.localScale.y >= 1)
             {
-                youWinLoseBox.transform.localScale += scaleResize;
-                if (youWinLoseBox.transform.localScale.x >= 1 && youWinLoseBox.transform.localScale.y >= 1)
-                {
-                    youWinLoseBox.transform.localScale = new Vector3(1, 1, 0);
-                }
+                youWinLoseBox.transform.localScale = new Vector3(1, 1, 0);
             }
-            if (winLoseTimer < 0.5f)
+        }
+        if (winLoseTimer < 0.5f)
+        {
+            youWinLoseBox.transform.localScale -= scaleResize;
+            if (youWinLoseBox.transform.localScale.x <= 0 && youWinLoseBox.transform.localScale.y <= 0)
             {
-                youWinLoseBox.transform.localScale -= scaleResize;
-                if (youWinLoseBox.transform.localScale.x <= 0 && youWinLoseBox.transform.localScale.y <= 0)
-                {
-                    youWinLoseBox.transform.localScale = new Vector3(0.01f, 0.01f, 0);
-                }
+                youWinLoseBox.transform.localScale = new Vector3(0.01f, 0.01f, 0);
             }
+        }
 
-            if (winLoseTimer <= 0)
-            {
-                winLoseTimer = 5;
-                youWinLoseBox.transform.localScale = new Vector3(0.01f, 0.01f, 0f);
-                youWinLoseBox.SetActive(false);
-                lose = false;
-            }
+        if (winLoseTimer <= 0)
+        {
+            showResult = false;
+            winLoseTimer = 5;
+            youWinLoseBox.transform.localScale = new Vector3(0.01f, 0.01f, 0f);
+            youWinLoseBox.SetActive(false);
         }
     }
 }
