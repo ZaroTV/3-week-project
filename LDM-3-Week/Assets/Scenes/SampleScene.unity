@@ -2591,8 +2591,8 @@ MonoBehaviour:
   underlingCounter: 0
   showResult: 0
   win: 0
-  spawnMagmaEffectWin: 0
-  spawnMagmaEffectLose: 0
+  winMagmaEffect: 0
+  loseMagmaEffect: 0
   scaleResize: {x: 0, y: 0, z: 0}
 --- !u!114 &515913320
 MonoBehaviour:
@@ -10643,7 +10643,7 @@ PrefabInstance:
     - target: {fileID: 7999847108253098259, guid: 58b018eb42523444f91d69331c6eddb6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 91.5
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 7999847108253098259, guid: 58b018eb42523444f91d69331c6eddb6,
         type: 3}
@@ -10653,7 +10653,7 @@ PrefabInstance:
     - target: {fileID: 7999847108253098259, guid: 58b018eb42523444f91d69331c6eddb6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 88.5
+      value: 80.5
       objectReference: {fileID: 0}
     - target: {fileID: 7999847108253098259, guid: 58b018eb42523444f91d69331c6eddb6,
         type: 3}
@@ -11544,7 +11544,7 @@ PrefabInstance:
     - target: {fileID: 1159624705564453645, guid: e550c3a2630bfde45ad3272e01ccbbb6,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1159624705564453683, guid: e550c3a2630bfde45ad3272e01ccbbb6,
         type: 3}
@@ -11719,10 +11719,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit_Final
       objectReference: {fileID: 0}
+    - target: {fileID: 3497950915477747200, guid: cc4addff65e5ab545999fd362411ae30,
+        type: 3}
+      propertyPath: m_TagString
+      value: exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497950915477747202, guid: cc4addff65e5ab545999fd362411ae30,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3497950915477747205, guid: cc4addff65e5ab545999fd362411ae30,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3497950915477747207, guid: cc4addff65e5ab545999fd362411ae30,
         type: 3}
@@ -11737,7 +11747,7 @@ PrefabInstance:
     - target: {fileID: 3497950915477747207, guid: cc4addff65e5ab545999fd362411ae30,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -76.5
+      value: -123.6
       objectReference: {fileID: 0}
     - target: {fileID: 3497950915477747207, guid: cc4addff65e5ab545999fd362411ae30,
         type: 3}

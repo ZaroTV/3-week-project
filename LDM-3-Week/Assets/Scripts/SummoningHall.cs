@@ -21,7 +21,7 @@ public class SummoningHall : MonoBehaviour
     }
     void Update()
     {
-        varX = Random.Range(0, 15); // these two random.ranges are here to constantly provide a random spawning location for the underlings
+        varX = Random.Range(0, 40); // these two random.ranges are here to constantly provide a random spawning location for the underlings
         varZ = Random.Range(18, 40);
     }
     void OnMouseDown() //this spawns the underlings

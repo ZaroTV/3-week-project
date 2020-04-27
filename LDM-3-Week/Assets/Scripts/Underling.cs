@@ -46,5 +46,17 @@ public class Underling : MonoBehaviour
     void OnTriggerEnter(Collider other) //this checks if they collide with a trigger, in this case. Only the red cube is a trigger
     {
         currExit = exit2;  //this sets their path to the far edge of the bridge, the second red cube OUTSIDE of the base
+        if(other.CompareTag("exit") == true) // this checks for the final exit tag
+        {
+            SelectEnemyBase(); //this triggers the event for when they enter the final exit tag
+            other.tag = ("not-active"); //changes the tag so that the event doesn't happen for each and every single underling
+        }
     }
+
+    void SelectEnemyBase() //the event that occurs when the underlings reach the final exit
+    {
+        Debug.Log("I'm the first one!");
+    }
+
+    
 }
