@@ -9,7 +9,16 @@ public class UIManager : MonoBehaviour
     public Button openGameMenuButton;
     public Button exitGameButton;
     public bool gameMenuIsOpen;
-   
+    
+    public GameObject battleMenu;
+    public Button cancelAttack;
+    public Button easyBase;
+    public Button normalBase;
+    public Button hardBase;
+    public float cancelAttackTimer;
+    public bool hasCanceledAttack;
+    public bool returnSummoningHall;
+
     void Start()
     {
         gameMenu = GameObject.Find("GameMenu");
@@ -17,7 +26,11 @@ public class UIManager : MonoBehaviour
         openGameMenuButton.onClick.AddListener(OpenGameMenu);
         exitGameButton = GameObject.Find("ExitGameButton").GetComponent<Button>();
         exitGameButton.onClick.AddListener(ExitGame);
+        battleMenu = GameObject.Find("BattleMenu");
+        cancelAttack = GameObject.Find("CancelButton").GetComponent<Button>();
+        cancelAttack.onClick.AddListener(CancelAttack);
         gameMenu.SetActive(false);
+        battleMenu.SetActive(false);
     }
     void Update()
     {
@@ -29,6 +42,16 @@ public class UIManager : MonoBehaviour
         {
             gameMenu.SetActive(false);
         }
+        if (hasCanceledAttack)
+        {
+            cancelAttackTimer -= Time.deltaTime;
+            if (cancelAttackTimer <= 0)
+            {
+                returnSummoningHall = false;
+                hasCanceledAttack = false;
+                cancelAttackTimer = 5;
+            }
+        }
     }
     void OpenGameMenu()
     {
@@ -37,5 +60,11 @@ public class UIManager : MonoBehaviour
     void ExitGame()
     {
         Application.Quit();
+    }
+
+    void CancelAttack()
+    {
+        hasCanceledAttack = true;
+        returnSummoningHall = true;
     }
 }

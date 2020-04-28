@@ -108,14 +108,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc6940c1a0281e4cb092ca55c63a367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 0
   exit1: {fileID: 1159624705564453683, guid: e550c3a2630bfde45ad3272e01ccbbb6, type: 3}
   exit2: {fileID: 3497950915477747207, guid: cc4addff65e5ab545999fd362411ae30, type: 3}
   speed: 50
   currExit: {fileID: 1159624705564453683, guid: e550c3a2630bfde45ad3272e01ccbbb6,
     type: 3}
+  returnSummoningHall: {fileID: 2895339092488167848, guid: 2b2bb022be425914eb75f58c72372e87,
+    type: 3}
   thebutton: {fileID: 4447200916807832954, guid: 2e7f420704da7614caf4649f6648a330,
     type: 3}
+  gameMenu2: {fileID: 5096890527697494832, guid: 51bd5c3bc5db48b41becbd3686d450cc,
+    type: 3}
+  underlingIsInBattle: 0
+  enterBattle: 0
 --- !u!54 &7999847108253098262
 Rigidbody:
   m_ObjectHideFlags: 0
