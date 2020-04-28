@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     public Button openGameMenuButton;
     public Button exitGameButton;
     public bool gameMenuIsOpen;
-    
     public GameObject battleMenu;
     public Button cancelAttack;
     public Button easyBase;
