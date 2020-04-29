@@ -19,10 +19,7 @@ public class BattleMenu : MonoBehaviour
     {
         cancelAttackTimer = 5;
     }
-    public void Update()
-    {
-       
-    }
+    
 
 
 }
